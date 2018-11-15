@@ -1,0 +1,20 @@
+spring:
+  rabbitmq:
+    addresses: localhost:5672,localhost:5673,localhost:5674
+    virtual-host: /study
+    listener:
+      type: simple
+      simple:
+        concurrency: 2
+        max-concurrency: 2
+        retry:
+          enabled: true
+        acknowledge-mode: auto
+        prefetch: 1
+        transaction-size: 1
+      direct:
+        consumers-per-queue: 1
+        acknowledge-mode: auto
+        prefetch: 1
+    template:
+      receive-timeout: 5s
