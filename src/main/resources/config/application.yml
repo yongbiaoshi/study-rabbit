@@ -5,10 +5,10 @@ spring:
     listener:
       type: simple
       simple:
-        concurrency: 2
-        max-concurrency: 2
+        concurrency: 1
+        max-concurrency: 1
         retry:
-          enabled: true
+          enabled: false
         acknowledge-mode: auto
         prefetch: 1
         transaction-size: 1
